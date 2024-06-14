@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import TaskCard from "./TaskCard";
+
+// time_rating options: 1: 0-30 minutes, 2: 30-60 minutes, 3: 1-2 hours, 4:2-4 hours, 5:4+ hours
+// frequency options: daily, weekly, bi-weekly, monthly, every _ months
+const ChoreList = [
+  {
+    id: 0,
+    name: "Wash the dishes",
+    frequency: "daily",
+    time_rating: 1,
+    assingment: null,
+    unpopular: false
+  }, 
+
+  {
+    id: 2,
+    name: "cut the grass",
+    frequency: "weekly",
+    time_rating: 3,
+    assingment: null,
+    unpopular: false
+  },
+
+  {
+    id: 3,
+    name: "clean the bathrooms",
+    frequency: "bi-weekly",
+    time_rating: 1,
+    assingment: null,
+    unpopular: false
+  }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h1>Honey-Do List</h1>
+      {ChoreList.map( chore => <TaskCard task={chore} />)}
     </div>
   );
 }
