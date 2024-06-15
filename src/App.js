@@ -41,7 +41,7 @@ function App() {
   return (
     <div >
       <h1>Honey-Do List</h1>
-      <NewTaskBtn />
+      <NewTaskForm />
       <ul>
         {TaskList.map( task => <TaskCard task={task} key={task.id}/>)}
       </ul>

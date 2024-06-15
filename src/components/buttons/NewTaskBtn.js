@@ -6,7 +6,6 @@ function NewTaskBtn() {
 
     function displayForm() {
         setIsNewTask(isNewTask = true);
-        
     }
 
     return (
