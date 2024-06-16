@@ -1,6 +1,7 @@
 import NewTaskForm from "./components/NewTaskForm";
 import TaskCard from "./components/TaskCard";
 import NewTaskBtn from "./components/buttons/NewTaskBtn";
+import { useState } from "react";
 
 // time_rating options: 1: 0-30 minutes, 2: 30-60 minutes, 3: 1-2 hours, 4:2-4 hours, 5:4+ hours
 // frequency options: one-time, daily, weekly, bi-weekly, monthly, every _ months
@@ -34,16 +35,20 @@ const TaskList = [
 ];
 
 function App() {
-  const handleClick = () => {
-    <NewTaskForm />
-  };
+
+  const [newTask, setNewTask] = useState({task: "", frequency: ""});
+
+  // newTask needs to be an array, tasks, that get updated evertime a new task is added
+  // // const handleClick = () => {
+  //   <NewTaskForm formData={formData}/>
+  // // };
 
   return (
     <div >
       <h1>Honey-Do List</h1>
-      <NewTaskForm />
+      <NewTaskForm newTask={newTask} setNewTask={setNewTask}/>
       <ul>
-        {TaskList.map( task => <TaskCard task={task} key={task.id}/>)}
+        {TaskList.map( task => <TaskCard newTask={newTask.task} task={task} key={task.id}/>)}
       </ul>
       
     </div>
