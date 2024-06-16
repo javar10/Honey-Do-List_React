@@ -36,16 +36,16 @@ const TaskList = [
 
 function App() {
 
-  const [newTask, setNewTask] = useState({task: "", frequency: ""});
+  const [taskList, setTaskList] = useState([]);
 
   // newTask needs to be an array, tasks, that get updated evertime a new task is added
   
   return (
     <div >
       <h1>Honey-Do List</h1>
-      <NewTaskForm newTask={newTask} setNewTask={setNewTask}/>
+      <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
       <ul>
-        {TaskList.map( task => <TaskCard newTask={newTask.task} task={task} key={task.id}/>)}
+        {taskList.map( task => <TaskCard task={task}/>)} 
       </ul>
       
     </div>

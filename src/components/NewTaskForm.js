@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function NewTaskForm({newTask, setNewTask}) {
+function NewTaskForm({taskList, setTaskList}) {
     const [formData, setFormData] = useState({task: "", frequency: ""});
 
     const handleChange = (event) => {
@@ -10,8 +10,8 @@ function NewTaskForm({newTask, setNewTask}) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        setNewTask({task: formData.task, frequency: formData.frequency});
-        alert(`${formData.task} was added to task list with a frequency of ${formData.frequency}`);
+        setTaskList([...taskList, formData.task]);
+        alert(`${formData.task} was added to task list with a frequency of ${formData.frequency}.\nTask list: ${taskList}`);
     }
 
     return (
