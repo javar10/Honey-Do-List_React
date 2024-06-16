@@ -11,7 +11,6 @@ function NewTaskForm({taskList, setTaskList}) {
     function handleSubmit(event) {
         event.preventDefault();
         setTaskList([...taskList, formData.task]);
-        alert(`${formData.task} was added to task list with a frequency of ${formData.frequency}.\nTask list: ${taskList}`);
     }
 
     return (

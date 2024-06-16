@@ -1,16 +1,16 @@
-import { useState } from "react"
+import AssignTaskBtn from "./buttons/AssignTaskBtn"
 
-function TaskCard({task}) {
-    // const [tasks, setTasks] = useState([]);
+function TaskListItem({task}) {
 
     return (
         <>
             <li className="list-group-item">
                 <input className="form-check-input me-1" type="checkbox" value="" aria-label="..." id=""/>
                 {task}
+                {/* <AssignTaskBtn /> */}
             </li>
         </>
     )
 }
 
-export default TaskCard
+export default TaskListItem
