@@ -39,10 +39,7 @@ function App() {
   const [newTask, setNewTask] = useState({task: "", frequency: ""});
 
   // newTask needs to be an array, tasks, that get updated evertime a new task is added
-  // // const handleClick = () => {
-  //   <NewTaskForm formData={formData}/>
-  // // };
-
+  
   return (
     <div >
       <h1>Honey-Do List</h1>
