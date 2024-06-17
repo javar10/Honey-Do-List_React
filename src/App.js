@@ -47,7 +47,7 @@ function App() {
     <div >
       <h1>Honey-Do List</h1>
       <AssignedTasks assignedList={assignedList}/>
-      <PendingTasks assignedList={assignedList} setAssignedList={setAssignedList} taskList={taskList} usersArray={usersArray}/>
+      <PendingTasks assignedList={assignedList} setAssignedList={setAssignedList} taskList={taskList} setTaskList={setTaskList} usersArray={usersArray}/>
       <h2>Add New Task</h2>
       <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
     </div>
