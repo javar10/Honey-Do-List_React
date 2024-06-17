@@ -1,7 +1,7 @@
-import AssignList from '../AssignList'
+import UserList from '../UserList'
 import {useState} from 'react'
 
-function AssignTaskBtn() {
+function AssignTaskBtn({assignedList, setAssignedList, usersArray, task}) {
     const [displayAssignList, setDisplayAssignList] = useState(false);
 
     const displayList = () => setDisplayAssignList(!displayAssignList);
@@ -11,7 +11,7 @@ function AssignTaskBtn() {
         <button type="button" className="btn btn-dark" id="assignTaskBtn" onClick={displayList}>
             Assign
         </button>
-        {displayAssignList && <AssignList/>}
+        {displayAssignList && <UserList assignedList={assignedList} setAssignedList={setAssignedList} usersArray={usersArray} task={task}/>}
         </>
  
     );

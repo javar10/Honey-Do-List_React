@@ -38,14 +38,16 @@ import { useState } from "react";
 function App() {
 
   const [taskList, setTaskList] = useState([]);
-  const [assignedList, setAssingedList] = useState(['pick peaches']);
+  const [assignedList, setAssignedList] = useState(['pick peaches']);
+  const [usersArray, setUsersArray] = useState(['Mom', 'Dad']);
+
   // newTask needs to be an array, tasks, that get updated evertime a new task is added
   
   return (
     <div >
       <h1>Honey-Do List</h1>
       <AssignedTasks assignedList={assignedList}/>
-      <PendingTasks taskList={taskList}/>
+      <PendingTasks assignedList={assignedList} setAssignedList={setAssignedList} taskList={taskList} usersArray={usersArray}/>
       <h2>Add New Task</h2>
       <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
     </div>
