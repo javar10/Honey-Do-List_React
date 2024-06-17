@@ -1,7 +1,8 @@
 import {useState} from "react";
 
 function NewTaskForm({taskList, setTaskList}) {
-    const [formData, setFormData] = useState({task: "", frequency: ""});
+    const initialFormData = {task: "", frequency: ""};
+    const [formData, setFormData] = useState(initialFormData);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -11,6 +12,7 @@ function NewTaskForm({taskList, setTaskList}) {
     function handleSubmit(event) {
         event.preventDefault();
         setTaskList([...taskList, formData.task]);
+        setFormData(initialFormData);
     }
 
     return (
@@ -23,6 +25,7 @@ function NewTaskForm({taskList, setTaskList}) {
                 <div className="mb-3">
                     <label htmlFor="newTaskFrequency" className="form-lable">Frequency</label>
                     <select name="frequency" className="form-select" aria-label="Default select example" id="newTaskFrequency" value={formData.frequency} onChange={handleChange}>
+                        <option value="" disabled>--Choose an option--</option>
                         <option value="One-Time">One-Time</option>
                         <option value="Daily">Daily</option>
                         <option value="Weekly">Weekly</option>
