@@ -1,3 +1,4 @@
+import '/src/App.css';
 import { useState } from 'react';
 import NewTaskForm from "../NewTaskForm";
 
@@ -11,7 +12,7 @@ function NewTaskBtn() {
     return (
         <div>
             {isNewTask && <NewTaskForm />}
-            <button type="button" className="btn btn-light" id="newTaskBtn" onClick={displayForm}>
+            <button style={{backgroundColor: 'blue'}} type="button" id="newTaskBtn" onClick={displayForm}>
                 New Task
             </button>
         </div>

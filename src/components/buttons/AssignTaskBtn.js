@@ -8,11 +8,14 @@ function AssignTaskBtn({taskList, setTaskList, assignedList, setAssignedList, us
     
     return (
         <>
-        <button type="button" className="btn btn-dark" id="assignTaskBtn" onClick={displayList}>
-            Assign
-        </button>
-        {displayAssignList && <UserList setDisplayAssignList={setDisplayAssignList} taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} usersArray={usersArray} task={task}/>}
+            <button type="button" id="assignTaskBtn" onClick={displayList}>
+                Assign
+            </button>
+            {displayAssignList && <UserList setDisplayAssignList={setDisplayAssignList} taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} usersArray={usersArray} task={task}/>}
+        
         </>
+ 
+
  
     );
 }

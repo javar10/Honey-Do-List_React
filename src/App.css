@@ -1,19 +1,68 @@
-.App {
-  text-align: center;
+:root {
+  /* Productivity Colors:
+  --main-background: hsl(239, 24%, 49%, 50%);
+  --main-background: hsl(8, 70%, 58%, 50%);
+  --alt-background: #df5b47;
+  --alt-background: #bf1b47;
+  --accent-color: #872a42;
+  --alt-color: #bf1b47;
+  --main-text: 	#380042;
+  --alt-text: #5f609c; */
+
+  /* Honeydew Colors */
+  --main-background: 	#eedead;
+  --alt-background: 	#ccdead;
+  --accent-color: 	#aadead;
+  --feature-color: #dddead;
+  --alt-color:  #bbdead;
+  --main-text: rgba(61, 61, 61, 0.937);
+  --alt-text: 
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--main-background);
+  color: var(--main-text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  background-color: var(--feature-color);
+  border: .1px solid var(--accent-color);
+  border-radius: 5px;
+  box-shadow: 0 0 1.5px 1.5px var(--accent-color);
+  color: var(--main-text);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: .2rem 1rem;
 }
 
-.App-header {
+button:hover {
+  background-color: var(--alt-color);
+}
+
+form input {
+  background-color: var(--feature-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header h1, .header img {
+  display: inline;
+  vertical-align: middle;
+  padding-right: 1rem;
+}
+
+.row {
+  background-color: var(--alt-background);
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,17 +71,5 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
