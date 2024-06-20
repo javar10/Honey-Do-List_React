@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Task} from "../shared/TASKS";
 
 function NewTaskForm({taskList, setTaskList}) {
     const initialFormData = {task: "", frequency: ""};
@@ -11,7 +12,10 @@ function NewTaskForm({taskList, setTaskList}) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        setTaskList([...taskList, formData.task]);
+        const newTask = new Task(taskList.length, formData.task);
+        console.log(newTask);
+        setTaskList([...taskList, newTask]);
+        console.log(taskList);
         setFormData(initialFormData);
     }
 

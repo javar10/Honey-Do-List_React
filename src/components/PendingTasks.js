@@ -11,7 +11,7 @@ function PendingTasks({taskList, setTaskList, assignedList, setAssignedList, use
                 {taskList.map( task => {
                     return (
                         <>
-                            <li className="list-group-item">{task}</li>
+                            <li className="list-group-item">{task.name}</li>
                             <AssignTaskBtn taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} task={task}/>
                         </>
                     )

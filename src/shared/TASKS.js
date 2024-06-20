@@ -1,4 +1,4 @@
-export class task {
+export class Task {
     constructor(id, name, assignment = null ) { // add frequency, duration, difficulty, overdue = false
         this.id = id;
         this.name = name;
