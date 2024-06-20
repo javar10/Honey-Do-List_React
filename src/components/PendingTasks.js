@@ -12,7 +12,7 @@ function PendingTasks({taskList, setTaskList, assignedList, setAssignedList, use
                     return (
                         <>
                             <li className="list-group-item">{task}</li>
-                            <AssignTaskBtn taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} usersArray={usersArray} task={task}/>
+                            <AssignTaskBtn taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} task={task}/>
                         </>
                     )
                     

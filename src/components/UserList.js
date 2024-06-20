@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { USERS } from '../shared/USERS';
 
 function UserList({setDisplayAssignList,taskList, setTaskList, assignedList, setAssignedList, usersArray, task}) {
     // const [formData, setFormData] = useState();
@@ -14,7 +14,7 @@ function UserList({setDisplayAssignList,taskList, setTaskList, assignedList, set
 
     return (
         <select onChange={handleChange}>
-            {usersArray.map(user => <option value={user}>{user}</option>)}
+            {USERS.map(user => <option value={user}>{user}</option>)}
         </select>
     );
 }

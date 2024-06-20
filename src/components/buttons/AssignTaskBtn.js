@@ -11,7 +11,7 @@ function AssignTaskBtn({taskList, setTaskList, assignedList, setAssignedList, us
             <button type="button" id="assignTaskBtn" onClick={displayList}>
                 Assign
             </button>
-            {displayAssignList && <UserList setDisplayAssignList={setDisplayAssignList} taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} usersArray={usersArray} task={task}/>}
+            {displayAssignList && <UserList setDisplayAssignList={setDisplayAssignList} taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} task={task}/>}
         
         </>
  

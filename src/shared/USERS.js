@@ -1,1 +1,1 @@
-export const USERS = [Mom, Dad];
+export const USERS = ['Mom', 'Dad'];
