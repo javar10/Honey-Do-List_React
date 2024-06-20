@@ -10,11 +10,13 @@ function NewTaskForm({taskList, setTaskList}) {
         setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
       };
 
+    const [taskCounter, setTaskCounter] = useState(0);
     function handleSubmit(event) {
         event.preventDefault();
-        const newTask = new Task(taskList.length, formData.task);
+        const newTask = new Task(taskCounter, formData.task);
         console.log(newTask);
         setTaskList([...taskList, newTask]);
+        setTaskCounter(taskCounter + 1);
         console.log(taskList);
         setFormData(initialFormData);
     }
