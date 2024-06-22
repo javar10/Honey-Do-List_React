@@ -25,7 +25,7 @@ body {
   color: var(--main-text);
 }
 
-button {
+button, .button {
   background-color: var(--feature-color);
   border: .1px solid var(--accent-color);
   border-radius: 5px;
@@ -36,7 +36,7 @@ button {
   padding: .2rem 1rem;
 }
 
-button:hover {
+button:hover, .button:hover {
   background-color: var(--alt-color);
 }
 
