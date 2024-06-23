@@ -39,7 +39,7 @@ function NewTaskForm({taskList, setTaskList}) {
                         <option value="Monthly">Monthly</option>
                     </select>
                 </div>
-                <button type="submit" name="button" className="btn btn-light" value="submit">Submit</button>
+                <button type="submit" name="button" className="btn btn-primary" value="submit">Submit</button>
             </form>
         </>
     );

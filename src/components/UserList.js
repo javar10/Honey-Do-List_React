@@ -6,11 +6,12 @@ function UserList({taskList, setTaskList, assignedList, setAssignedList, usersAr
     function handleClick(e) {
         setAssignedList([...assignedList, task]);
         setTaskList(taskList.filter(li => li !== task));
+
     }
 
     return (
-        <Dropdown.Menu>
-            {USERS.map(user => <Dropdown.Item onClick={handleClick}>{user}</Dropdown.Item>)}
+        <Dropdown.Menu className='userform'>
+            {USERS.map(user => <Dropdown.Item  onClick={handleClick}>{user}</Dropdown.Item>)}
         </Dropdown.Menu>
     );
 }
