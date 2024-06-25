@@ -22,9 +22,9 @@ function App() {
         {/* <img src={honeydew} height="50rem" style={{ display: 'inline', marginRight: '2rem', verticalAlign: 'middle' }} />
         <h1 style={{ display: 'inline', marginRight: '10px' }}>Honey-Do List</h1> */}
       </div>
-      <div className="row">
-        <AssignedTasks className="col" assignedList={assignedList}/>  
-      </div>
+      
+        <AssignedTasks assignedList={assignedList}/>  
+      
       <div className="row">
         <PendingTasks className="col" assignedList={assignedList} setAssignedList={setAssignedList} taskList={taskList} setTaskList={setTaskList}/>
       </div>

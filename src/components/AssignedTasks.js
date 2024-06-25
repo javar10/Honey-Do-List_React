@@ -4,7 +4,7 @@ import { USERS } from '../shared/USERS';
 function AssignedTasks({assignedList}) {
     console.log(USERS);
     return (
-       <>
+        <div className="row">
             {USERS.map(user => {
                 return (
                     <div className="col">
@@ -12,10 +12,9 @@ function AssignedTasks({assignedList}) {
                         <TaskList taskList={assignedList}/>
                     </div>
                 )
-              
             })}
             
-        </>
+        </div>
     );
 }
 

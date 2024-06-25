@@ -6,7 +6,7 @@ function UserList({taskList, setTaskList, assignedList, setAssignedList, usersAr
     function handleClick(e) {
         setAssignedList([...assignedList, task]);
         setTaskList(taskList.filter(li => li !== task));
-
+        
     }
 
     return (
