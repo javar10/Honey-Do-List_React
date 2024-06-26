@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Task} from "../shared/TASKS";
+import {Task} from "../features/new_tasks/newTaskSlice";
 
 function NewTaskForm({taskList, setTaskList}) {
     const initialFormData = {task: "", frequency: ""};
@@ -13,13 +13,14 @@ function NewTaskForm({taskList, setTaskList}) {
     const [taskCounter, setTaskCounter] = useState(0);
     function handleSubmit(event) {
         event.preventDefault();
-        const newTask = new Task(taskCounter, formData.task);
+        const newTask = new Task(taskCounter, formData.task, formData.frequency);
         console.log(newTask);
         setTaskList([...taskList, newTask]);
         setTaskCounter(taskCounter + 1);
         console.log(taskList);
         setFormData(initialFormData);
     }
+    console.log(taskList);
 
     return (
         <>

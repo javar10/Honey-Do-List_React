@@ -23,7 +23,7 @@ function App() {
         <h1 style={{ display: 'inline', marginRight: '10px' }}>Honey-Do List</h1> */}
       </div>
       
-        <AssignedTasks assignedList={assignedList}/>  
+        <AssignedTasks taskList={taskList}/>  
       
       <div className="row">
         <PendingTasks className="col" assignedList={assignedList} setAssignedList={setAssignedList} taskList={taskList} setTaskList={setTaskList}/>

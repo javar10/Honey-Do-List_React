@@ -5,10 +5,15 @@ function UserList({taskList, setTaskList, assignedList, setAssignedList, usersAr
 
     function handleClick(e) {
         setAssignedList([...assignedList, task]);
-        setTaskList(taskList.filter(li => li !== task));
-        
-    }
+        task.assignment = e.target.innerText;
+        console.log(e);
+        console.log(e.target.innerText);
+        console.log(task.assignment);
+        // setTaskList([...taskList, ])
+        // setTaskList(taskList.filter(li => li !== task));
 
+    }
+console.log(taskList);
     return (
         <Dropdown.Menu className='userform'>
             {USERS.map(user => <Dropdown.Item onClick={handleClick}>{user}</Dropdown.Item>)}
