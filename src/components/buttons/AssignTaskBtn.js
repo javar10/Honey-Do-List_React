@@ -1,14 +1,13 @@
 import UserList from '../UserList'
-// import {useState} from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
 
-function AssignTaskBtn({taskList, setTaskList, assignedList, setAssignedList, usersArray, task}) {
+function AssignTaskBtn({taskList, setTaskList, assignedList, setAssignedList, task}) {
     return (
         <Dropdown>
             <Dropdown.Toggle className="button btn-assign" id="dropdown-basic">
                 Assign
             </Dropdown.Toggle>
-            <UserList taskList={taskList} setTaskList={setTaskList} assignedList={assignedList} setAssignedList={setAssignedList} task={task}/>
+            <UserList taskList={taskList} setTaskList={setTaskList} task={task}/>
         </Dropdown>
     );
 }

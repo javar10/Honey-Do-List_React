@@ -9,24 +9,18 @@ import { useState } from "react";
 function App() {
 
   const [taskList, setTaskList] = useState([]);
-  const [assignedList, setAssignedList] = useState([{name: 'pick peaches'}]);
-  const [usersArray, setUsersArray] = useState(['Mom', 'Dad']);
-
-  // newTask needs to be an array, tasks, that get updated evertime a new task is added
   
   return (
     <div className="container">
-      <div className="header">  {/*style={{ margin: '1rem 0', display: 'flex', alignItems: 'center' }} */}
+      <div className="header">  
         <img src={honeydew} height="50rem" />
         <h1>Honey-Do List</h1>
-        {/* <img src={honeydew} height="50rem" style={{ display: 'inline', marginRight: '2rem', verticalAlign: 'middle' }} />
-        <h1 style={{ display: 'inline', marginRight: '10px' }}>Honey-Do List</h1> */}
       </div>
       
         <AssignedTasks taskList={taskList}/>  
       
       <div className="row">
-        <PendingTasks className="col" assignedList={assignedList} setAssignedList={setAssignedList} taskList={taskList} setTaskList={setTaskList}/>
+        <PendingTasks className="col" taskList={taskList} setTaskList={setTaskList}/>
       </div>
       <div className="row">
         <div className="col">
