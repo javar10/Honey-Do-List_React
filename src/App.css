@@ -92,6 +92,22 @@ form input {
 .users-assigned-tasks-div:first-child {
   margin-right: 1rem;
 }
+
+.pending-tasks-div {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  border-bottom: 3px solid var(--feature-color);
+  /* display: inline-block; */
+
+}
+
+.assign-task-btn {
+  display: inline-block;
+}
+
+.task-name {
+  text-transform: capitalize;
+}
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -102,4 +118,5 @@ form input {
   font-size: calc(10px + 2vmin);
   color: white;
 } */
+
 
