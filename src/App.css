@@ -101,6 +101,10 @@ form input {
 
 }
 
+.pending-tasks-div:last-child {
+  border: none;
+}
+
 .assign-task-btn {
   display: inline-block;
 }
@@ -108,6 +112,7 @@ form input {
 .task-name {
   text-transform: capitalize;
 }
+
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;

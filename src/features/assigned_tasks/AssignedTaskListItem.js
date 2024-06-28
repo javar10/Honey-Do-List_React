@@ -3,26 +3,9 @@ function AssignedTaskListItem({usersTaskList, taskList, setTaskList, task}) {
 
     const [taskIsComplete, setTaskIsComplete] = useState(false);
 
-    // function handleClick(e) {
-        // setTaskIsComplete(true);
-        // if (taskIsComplete) {
-        //     setTaskList([...taskList], task.assignment === null);
-
-        // }
-        // e.preventDefault();
-        // task.assignment = null;
-
-        // const updatedTask = {...task, assignment:null};
-        // setTaskList([...taskList, updatedTask]);  
-        // console.log(e.target.id)
-        // console.log(task);
-        // setTaskList(...taskList, taskList[e.target.id].assignment = null);
-    // }
-
-    function handleClick(e) {
+    function handleClick() {
         task.assignment = null;
         setTaskList([...taskList]);
-        // setTaskIsComplete(true);
     }
 
     console.log(taskList);
@@ -33,7 +16,7 @@ function AssignedTaskListItem({usersTaskList, taskList, setTaskList, task}) {
                 <input 
                     className="form-check-input me-1"
                     type="checkbox" 
-                    value="" 
+                    checked={taskIsComplete} 
                     onClick={handleClick}
                     aria-label="..." 
                     id={task.id}/>
