@@ -1,4 +1,4 @@
-import { USERS } from '../shared/USERS';
+import { USERS } from '../../shared/USERS'; 
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function UserList({taskList, setTaskList, task}) {

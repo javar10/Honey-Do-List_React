@@ -1,5 +1,5 @@
-import TaskList from "./TaskList";
-import { USERS } from '../shared/USERS';
+import AssignedTaskList from "./AssignedTaskList";
+import { USERS } from "../../shared/USERS";
 
 function AssignedTasks({taskList}) {
     return (
@@ -10,7 +10,7 @@ function AssignedTasks({taskList}) {
                 return (
                     <div className="col users-assigned-tasks-div">
                         <h2>{user}'s Assigned Tasks</h2>
-                        <TaskList taskList={usersTasks}/>
+                        <AssignedTaskList taskList={usersTasks}/>
                     </div>
                 )
             })}

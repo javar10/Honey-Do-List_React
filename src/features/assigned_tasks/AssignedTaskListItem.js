@@ -1,6 +1,5 @@
-import AssignTaskBtn from "./buttons/AssignTaskBtn"
 
-function TaskListItem({task}) {
+function AssignedTaskListItem({task}) {
 
     return (
         <>
@@ -12,4 +11,4 @@ function TaskListItem({task}) {
     )
 }
 
-export default TaskListItem
+export default AssignedTaskListItem;

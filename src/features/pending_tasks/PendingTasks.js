@@ -1,4 +1,4 @@
-import AssignTaskBtn from "./buttons/AssignTaskBtn";
+import AssignTaskBtn from "./AssignTaskBtn";
 
 function PendingTasks({taskList, setTaskList}) {
     
@@ -8,7 +8,7 @@ function PendingTasks({taskList, setTaskList}) {
             <ul>
                 {taskList.map( task => {
                     console.log(task.assignment);
-                    if (task.assignment === null) {
+                    if (task.assignment === 'pending') {
                         return (
                             <>
                                 <li key={task.id} className="list-group-item">{task.name}</li>

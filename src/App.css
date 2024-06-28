@@ -78,7 +78,6 @@ form input {
 
 .row, .users-assigned-tasks-div {
   background-color: var(--alt-background);
-  /* border: 1px solid black; */
   border-radius: 10px;
   
 }
@@ -89,11 +88,6 @@ form input {
 .assigned-tasks-div{
   background-color: var(--main-background);
 }
-
-/* .users-assigned-tasks-div{
-  background-color: var(--alt-background);
-  border-radius: 10px;
-} */
 
 .users-assigned-tasks-div:first-child {
   margin-right: 1rem;

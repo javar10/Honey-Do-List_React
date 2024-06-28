@@ -1,9 +1,8 @@
 import './App.css';
 import honeydew from './assets/HoneydewIMG2.png';
-import AssignedTasks from "./components/AssignedTasks";
-import NewTaskForm from "./components/NewTaskForm";
-import PendingTasks from "./components/PendingTasks";
-import TaskList from "./components/TaskList";
+import AssignedTasks from './features/assigned_tasks/AssignedTasks';
+import NewTaskForm from "./features/new_tasks/NewTaskForm";
+import PendingTasks from './features/pending_tasks/PendingTasks';
 import { useState } from "react";
 
 function App() {

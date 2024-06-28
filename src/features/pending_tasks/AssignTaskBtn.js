@@ -1,7 +1,7 @@
-import UserList from '../UserList'
+import UserList from './UserList';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-function AssignTaskBtn({taskList, setTaskList, assignedList, setAssignedList, task}) {
+function AssignTaskBtn({taskList, setTaskList, task}) {
     return (
         <Dropdown>
             <Dropdown.Toggle className="button btn-assign" id="dropdown-basic">
