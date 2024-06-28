@@ -17,7 +17,6 @@ function NewTaskForm({taskList, setTaskList}) {
         console.log(newTask);
         setTaskList([...taskList, newTask]);
         setTaskCounter(taskCounter + 1);
-        console.log(taskList);
         setFormData(initialFormData);
     }
     console.log(taskList);
