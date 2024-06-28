@@ -7,7 +7,6 @@ function PendingTasks({taskList, setTaskList}) {
             <h2>Pending Tasks</h2>
             <ul>
                 {taskList.map( task => {
-                    console.log(task.assignment);
                     if (task.assignment === 'pending') {
                         return (
                             <div className="pending-tasks-div">

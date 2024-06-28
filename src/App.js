@@ -16,7 +16,7 @@ function App() {
         <h1>Honey-Do List</h1>
       </div>
       
-        <AssignedTasks taskList={taskList}/>  
+        <AssignedTasks taskList={taskList} setTaskList={setTaskList}/>  
       
       <div className="row">
         <PendingTasks className="col" taskList={taskList} setTaskList={setTaskList}/>

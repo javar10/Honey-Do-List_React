@@ -4,9 +4,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
 function UserList({taskList, setTaskList, task}) {
 
     function handleClick(e) {
-        task.assignment = e.target.innerText;
+        const updatedTask = taskList[task.id];
+        updatedTask.assignment = e.target.innerText;
         setTaskList([...taskList]);
     }
+
+    console.log(taskList)
 
     return (
         <Dropdown.Menu className='userform'>
