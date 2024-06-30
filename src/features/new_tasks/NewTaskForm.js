@@ -1,7 +1,8 @@
-import {useState} from "react";
+import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, Label, Col, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
-import {Task} from "./newTaskSlice";
+import { Task } from "./newTaskSlice";
+import { validateNewTaskForm } from './validateNewTaskForm';
 
 function NewTaskForm({taskList, setTaskList}) {
     const [displayTaskForm, setDisplayTaskForm] = useState(false);
@@ -28,9 +29,10 @@ function NewTaskForm({taskList, setTaskList}) {
                     <Formik 
                         initialValues={{
                             task: "", 
-                            frequency: ""
+                            frequency: "--Choose an option--"
                         }}
                         onSubmit={handleSubmit}
+                        validate={validateNewTaskForm}
                     >
                         <Form>
                             <h2>Add New Task</h2>
@@ -42,7 +44,7 @@ function NewTaskForm({taskList, setTaskList}) {
                                     className="form-control"
                                 />
                             </FormGroup>
-                            <ErrorMessage name="task">Error</ErrorMessage>
+                            <ErrorMessage name="task">{(msg) => <p className='text-danger'>{msg}</p>}</ErrorMessage>
 
                             <FormGroup>
                                 <Label htmlFor="newTaskFrequency" className="form-label md-2">Frequency   </Label>
@@ -51,14 +53,14 @@ function NewTaskForm({taskList, setTaskList}) {
                                     as="select"
                                     className="form-control"
                                 >
-                                    <option value="" disabled>--Choose an option--</option>
+                                    <option disabled>--Choose an option--</option>
                                     <option>One-Time</option>
                                     <option>Daily</option>
                                     <option>Weekly</option>
                                     <option>Bi-Weekly</option>
                                     <option>Monthly</option>
                                 </Field>
-                                <ErrorMessage name="frequency">Error</ErrorMessage>
+                                <ErrorMessage name="frequency">{(msg) => <p className='text-danger'>{msg}</p>}</ErrorMessage>
                             </FormGroup>
                             <Button type="submit">Submit</Button>
                         </Form>
