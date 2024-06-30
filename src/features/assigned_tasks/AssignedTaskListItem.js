@@ -17,7 +17,7 @@ function AssignedTaskListItem({usersTaskList, taskList, setTaskList, task}) {
                     className="form-check-input me-1"
                     type="checkbox" 
                     checked={taskIsComplete} 
-                    onClick={handleClick}
+                    onChange={handleClick}
                     aria-label="..." 
                     id={task.id}/>
                 {task.name}

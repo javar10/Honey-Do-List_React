@@ -30,13 +30,14 @@ h2 {
 }
 button, .button, .btn-light, .btn, .btn-primary {
   background-color: var(--feature-color) !important;
-  border: 1px solid var(--accent-color) !important;
-  border-radius: 5px;
-  box-shadow: 0 0 .25px .25px var(--accent-color) !important;
+  /* border: 1px solid var(--accent-color) !important; */
+  border: none !important;
+  border-radius: 50px;
+  /* box-shadow: 0 0 .25px .25px var(--accent-color) !important; */
   color: var(--main-text) !important;
   font-weight: bold;
   margin-bottom: 1rem;
-  padding: .2rem 1rem;
+  padding: .2rem 1.2rem;
 }
 
 button:hover, .button:hover, .btn.show, .userform {

@@ -1,6 +1,7 @@
 import './App.css';
 import honeydew from './assets/HoneydewIMG2.png';
 import AssignedTasks from './features/assigned_tasks/AssignedTasks';
+// import NewTaskBtn from './features/new_tasks/NewTaskBtn';
 import NewTaskForm from "./features/new_tasks/NewTaskForm";
 import PendingTasks from './features/pending_tasks/PendingTasks';
 import { useState } from "react";
@@ -22,10 +23,7 @@ function App() {
         <PendingTasks className="col" taskList={taskList} setTaskList={setTaskList}/>
       </div>
       <div className="row">
-        <div className="col">
-          <h2>Add New Task</h2>
-          <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
-        </div>
+        <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
       </div>
 
     </div>
