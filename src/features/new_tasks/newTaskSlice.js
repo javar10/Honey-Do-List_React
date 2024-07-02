@@ -12,3 +12,34 @@ export class Task {
     }
 }
 
+export const calcDueDate = (dateCreated, frequency) => {
+    const dateCreatedDay = dateCreated.getDay();
+    const dateCreatedMonth = dateCreated.getMonth();
+    console.log(frequency);
+
+    let dueDateUnformatted;
+    switch (frequency) {
+        case 'Daily':
+            dueDateUnformatted = dateCreated.setDate(dateCreatedDay + 1);
+            break;
+        case 'Weekly':
+            dueDateUnformatted = dateCreated.setDate(dateCreatedDay + 7);
+            break;
+        case 'Bi-Weekly':
+            dueDateUnformatted = dateCreated.setDate(dateCreatedDay + 14);
+            break;
+        case 'Monthly':
+            dueDateUnformatted = dateCreated.setMonth(dateCreatedMonth + 1);
+            break;
+    }
+    
+    console.log(dueDateUnformatted)
+    const dueDateObj = new Date(dueDateUnformatted);
+    console.log(dueDateObj);
+    const month = dueDateObj.getMonth() + 1;
+    const day2 = dueDateObj.getDate();
+    const year = dueDateObj.getFullYear();
+    const dueDate = `${month}/${day2}/${year}`
+    console.log(dueDate);
+    return dueDate;
+}

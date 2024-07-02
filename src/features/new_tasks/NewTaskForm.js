@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, Label, Col, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
-import { Task } from "./newTaskSlice";
+import { Task, calcDueDate } from "./newTaskSlice";
 import { validateNewTaskForm } from './validateNewTaskForm';
 
 function NewTaskForm({taskList, setTaskList}) {
@@ -10,19 +10,7 @@ function NewTaskForm({taskList, setTaskList}) {
     const [taskCounter, setTaskCounter] = useState(0);
     function handleSubmit(values, {resetForm}) {
         const dateCreated = new Date();
-
-        // const currentDay = dateCreated.getDay();
-
-        const dueDateUnformatted = dateCreated.setDate(dateCreated.getDay() + 7);
-        console.log(dueDateUnformatted)
-
-        const dueDateObj = new Date(dueDateUnformatted);
-        console.log(dueDateObj);
-        const month = dueDateObj.getMonth() + 1;
-        const day2 = dueDateObj.getDate();
-        const year = dueDateObj.getFullYear();
-        const dueDate = `${month}/${day2}/${year}`
-        console.log(dueDate);
+        const dueDate = calcDueDate(dateCreated, values.frequency);
         const newTask = new Task(taskCounter, values.task, values.frequency, 'pending', dateCreated, dueDate);
         setTaskList([...taskList, newTask]);
         setTaskCounter(taskCounter + 1);

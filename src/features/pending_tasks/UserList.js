@@ -9,8 +9,6 @@ function UserList({taskList, setTaskList, task}) {
         setTaskList([...taskList]);
     }
 
-    console.log(taskList)
-
     return (
         <Dropdown.Menu className='userform'>
             {USERS.map(user => <Dropdown.Item onClick={handleClick}>{user}</Dropdown.Item>)}
