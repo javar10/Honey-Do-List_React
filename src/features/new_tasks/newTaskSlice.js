@@ -1,5 +1,5 @@
 export class Task {
-    constructor(id, name, frequency, assignment, dateCreated ) { // add duration, difficulty, dueDate, overdue = false
+    constructor(id, name, frequency, assignment, dateCreated, dueDate ) { // add duration, difficulty, overdue = false
         this.id = id;
         this.name = name;
         this.frequency = frequency;
@@ -7,7 +7,7 @@ export class Task {
         // this.difficulty = difficulty;
         this.assignment = assignment;
         this.dateCreated = dateCreated;
-        // this.dueDate = dueDate;
+        this.dueDate = dueDate;
         // this.overdue = overdue;
     }
 }

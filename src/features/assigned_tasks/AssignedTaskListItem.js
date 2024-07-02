@@ -20,7 +20,8 @@ function AssignedTaskListItem({usersTaskList, taskList, setTaskList, task}) {
                     onChange={handleClick}
                     aria-label="..." 
                     key={task.id}/>
-                {task.name}
+                <h5>{task.name}</h5> 
+                <p>Due by: {task.dueDate}</p>
             </li>
         </>
     )

@@ -13,7 +13,7 @@ function PendingTasks({taskList, setTaskList}) {
                                 <li key={task.id} className="list-group-item">
                                     <h4 className="task-name">{task.name}</h4>
                                     <p>{task.frequency}</p>
-                                    <p>{task.dueDate}</p>
+                                    <p>Due by: {task.dueDate}</p>
                                     </li>
                                 <AssignTaskBtn className="assign-task-btn" taskList={taskList} setTaskList={setTaskList} task={task}/>
                             </div>

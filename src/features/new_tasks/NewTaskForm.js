@@ -11,7 +11,19 @@ function NewTaskForm({taskList, setTaskList}) {
     function handleSubmit(values, {resetForm}) {
         const dateCreated = new Date();
 
-        const newTask = new Task(taskCounter, values.task, values.frequency, 'pending', dateCreated);
+        // const currentDay = dateCreated.getDay();
+
+        const dueDateUnformatted = dateCreated.setDate(dateCreated.getDay() + 7);
+        console.log(dueDateUnformatted)
+
+        const dueDateObj = new Date(dueDateUnformatted);
+        console.log(dueDateObj);
+        const month = dueDateObj.getMonth() + 1;
+        const day2 = dueDateObj.getDate();
+        const year = dueDateObj.getFullYear();
+        const dueDate = `${month}/${day2}/${year}`
+        console.log(dueDate);
+        const newTask = new Task(taskCounter, values.task, values.frequency, 'pending', dateCreated, dueDate);
         setTaskList([...taskList, newTask]);
         setTaskCounter(taskCounter + 1);
         resetForm();
