@@ -1,0 +1,129 @@
+:root {
+  /* Productivity Colors:
+  --main-background: hsl(239, 24%, 49%, 50%);
+  --main-background: hsl(8, 70%, 58%, 50%);
+  --alt-background: #df5b47;
+  --alt-background: #bf1b47;
+  --accent-color: #872a42;
+  --alt-color: #bf1b47;
+  --main-text: 	#380042;
+  --alt-text: #5f609c; */
+
+  /* Honeydew Colors */
+  --main-background: 	#eedead;
+  --alt-background: 	#ccdead;
+  --accent-color: 	#aadead;
+  --feature-color: #dddead;
+  --alt-color:  #bbdead;
+  --main-text: rgba(61, 61, 61, 0.937);
+  --alt-text: 
+
+}
+
+body {
+  background-color: var(--main-background);
+  color: var(--main-text);
+}
+
+h2 {
+  padding-top: .4rem;
+}
+
+button, .button, .btn-light, .btn, .btn-primary {
+  background-color: var(--feature-color) !important;
+  /* border: 1px solid var(--accent-color) !important; */
+  border: none !important;
+  border-radius: 50px;
+  /* box-shadow: 0 0 .25px .25px var(--accent-color) !important; */
+  color: var(--main-text) !important;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: .2rem 1.2rem;
+}
+
+button:hover, .button:hover, .btn.show, .userform {
+  background-color: var(--alt-color)!important;
+  border: .1px solid var(--accent-color)!important;
+  color: var(--main-text)!important;
+  box-shadow: 0 0 .25px .25px var(--accent-color) !important;
+}
+
+.dropdown-item:hover, .dropdown-item:active {
+  background-color: var(--accent-color)!important;
+  color: var(--main-text)!important;
+  font-weight: bold;
+}
+/* .btn-primary {
+  background-color: var(--alt-color)!important;
+} */
+
+ /* {
+  background-color: var(--alt-color)!important;
+  border: .1px solid var(--accent-color)!important;
+  color: var(--main-text)!important;
+} */
+
+form input {
+  background-color: var(--feature-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header h1, .header img {
+  display: inline;
+  vertical-align: middle;
+  padding-right: 1rem;
+}
+
+.row, .users-assigned-tasks-div {
+  background-color: var(--alt-background);
+  border-radius: 10px;
+  
+}
+.row {
+  margin: 1rem
+}
+
+.assigned-tasks-div{
+  background-color: var(--main-background);
+}
+
+.users-assigned-tasks-div:first-child {
+  margin-right: 1rem;
+}
+
+.pending-tasks-div {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  border-bottom: 3px solid var(--feature-color);
+  /* display: inline-block; */
+
+}
+
+.pending-tasks-div:last-child {
+  border: none;
+}
+
+.assign-task-btn {
+  display: inline-block;
+}
+
+.task-name {
+  text-transform: capitalize;
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+
