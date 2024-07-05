@@ -77,13 +77,35 @@ function NewTaskForm({taskList, setTaskList}) {
                                     <ErrorMessage name="frequency">{(msg) => <p className='text-danger'>{msg}</p>}</ErrorMessage>
                                 </FormGroup>
 
-                                {selectedFrequency === 'One-Time' && <FormGroup>
-                                    <Label htmlFor="one-timeDetails" className="form-label md-2">Due Date</Label>
-                                    <Field
-                                        name="one-timeDetails"
-                                        className="form-control"
-                                    />
-                                </FormGroup>}
+                                {selectedFrequency === 'One-Time' && 
+                                    <FormGroup>
+                                        <Label htmlFor="one-timeDetails" className="form-label md-2">Due Date</Label>
+                                        <br></br>
+                                        <Label htmlFor="one-timeMonth" className="form-label md-2">Month</Label>
+                                        <Field
+                                            name="one-timeMonth"
+                                            className="form-control"
+                                            as="select"
+                                        >     
+                                        <option>1</option>
+                                        <option>2</option>
+                                        </Field>
+                                        <Label htmlFor="one-timeDay" className="form-label md-2">Day</Label>
+                                        <Field
+                                            name="one-timeDay"
+                                            className="form-control"
+                                            as="select"
+                                        >     
+                                        </Field>
+                                        <Label htmlFor="one-timeYear" className="form-label md-2">Year</Label>
+                                        <Field
+                                            name="one-timeYear"
+                                            className="form-control"
+                                            as="select"
+                                        >     
+                                        </Field>
+                                    
+                                    </FormGroup>}
                                 <Button type="submit">Submit</Button>
                             </Form>
                         )}
