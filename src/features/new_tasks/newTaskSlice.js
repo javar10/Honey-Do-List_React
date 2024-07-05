@@ -19,6 +19,8 @@ export const calcDueDate = (dateCreated, frequency) => {
 
     let dueDateUnformatted;
     switch (frequency) {
+        case 'One-Time':
+            return;
         case 'Daily':
             dueDateUnformatted = dateCreated.setDate(dateCreatedDay + 1);
             break;

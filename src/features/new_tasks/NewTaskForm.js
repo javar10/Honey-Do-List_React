@@ -16,7 +16,10 @@ function NewTaskForm({taskList, setTaskList}) {
     const [taskCounter, setTaskCounter] = useState(0);
     function handleSubmit(values, {resetForm}) {
         const dateCreated = new Date();
-        const dueDate = calcDueDate(dateCreated, values.frequency);
+        let dueDate = calcDueDate(dateCreated, values.frequency);
+        if (!dueDate) {
+            dueDate = `${values.oneTimeMonth}/${values.oneTimeDay}/${values.oneTimeYear}`;
+        }
         const newTask = new Task(taskCounter, values.task, values.frequency, 'pending', dateCreated, dueDate);
         setTaskList([...taskList, newTask]);
         setTaskCounter(taskCounter + 1);
@@ -81,27 +84,35 @@ function NewTaskForm({taskList, setTaskList}) {
                                     <FormGroup>
                                         <Label htmlFor="one-timeDetails" className="form-label md-2">Due Date</Label>
                                         <br></br>
-                                        <Label htmlFor="one-timeMonth" className="form-label md-2">Month</Label>
+                                        <Label htmlFor="oneTimeMonth" className="form-label md-2">Month</Label>
                                         <Field
-                                            name="one-timeMonth"
+                                            name="oneTimeMonth"
                                             className="form-control"
                                             as="select"
                                         >     
-                                        <option>1</option>
-                                        <option>2</option>
+                                        {[...Array(12)].map((item, index) => {
+                                            return (
+                                                <option>{index + 1}</option>
+                                            );
+                                        })} 
                                         </Field>
-                                        <Label htmlFor="one-timeDay" className="form-label md-2">Day</Label>
+                                        <Label htmlFor="oneTimeDay" className="form-label md-2">Day</Label>
                                         <Field
-                                            name="one-timeDay"
+                                            name="oneTimeDay"
                                             className="form-control"
                                             as="select"
-                                        >     
+                                        > 
+                                        {[...Array(31)].map((item, index) => {
+                                            return (
+                                                <option>{index + 1}</option>
+                                            );
+                                        })}    
                                         </Field>
-                                        <Label htmlFor="one-timeYear" className="form-label md-2">Year</Label>
+                                        <Label htmlFor="oneTimeYear" className="form-label md-2">Year</Label>
                                         <Field
-                                            name="one-timeYear"
+                                            name="oneTimeYear"
                                             className="form-control"
-                                            as="select"
+                                            placeholder="YYYY"
                                         >     
                                         </Field>
                                     
