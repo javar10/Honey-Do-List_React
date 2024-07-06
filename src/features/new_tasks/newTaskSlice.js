@@ -39,9 +39,9 @@ export const calcDueDate = (dateCreated, frequency) => {
     const dueDateObj = new Date(dueDateUnformatted);
     console.log(dueDateObj);
     const month = dueDateObj.getMonth() + 1;
-    const day2 = dueDateObj.getDate();
+    const day = dueDateObj.getDate();
     const year = dueDateObj.getFullYear();
-    const dueDate = `${month}/${day2}/${year}`
+    const dueDate = `${month}/${day}/${year}`
     console.log(dueDate);
     return dueDate;
 }

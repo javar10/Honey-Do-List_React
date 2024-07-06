@@ -1,32 +1,23 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import honeydew from './assets/HoneydewIMG2.png';
+import honeydew from '../src/assets/HoneydewIMG2.png';
+import HomePage from './page/HomePage';
 import AssignedTasks from './features/assigned_tasks/AssignedTasks';
-// import NewTaskBtn from './features/new_tasks/NewTaskBtn';
-import NewTaskForm from "./features/new_tasks/NewTaskForm";
-import PendingTasks from './features/pending_tasks/PendingTasks';
-import { useState } from "react";
 
 function App() {
 
-  const [taskList, setTaskList] = useState([]);
-  
   return (
    
-    <div className="container">
+    <div className="app">
       <div className="header">  
         <img src={honeydew} height="50rem" />
         <h1>Honey-Do List</h1>
       </div>
-      
-        <AssignedTasks taskList={taskList} setTaskList={setTaskList}/>  
-      
-      <div className="row">
-        <PendingTasks className="col" taskList={taskList} setTaskList={setTaskList}/>
-      </div>
-      <div className="row">
-        <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
-      </div>
-
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        {/* <Route path='/assigned-tasks' element={<AssignedTasks />} /> */}
+        {/* <Route path='/assigned-tasks/:user' element={<AssignedTasks />} /> */}
+      </Routes>
     </div>
 
 
