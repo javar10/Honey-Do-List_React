@@ -11,7 +11,7 @@ function UserList({taskList, setTaskList, task}) {
 
     return (
         <Dropdown.Menu className='userform'>
-            {USERS.map(user => <Dropdown.Item onClick={handleClick}>{user}</Dropdown.Item>)}
+            {USERS.map(user => <Dropdown.Item key={task.id} onClick={handleClick}>{user}</Dropdown.Item>)}
         </Dropdown.Menu>
     );
 }

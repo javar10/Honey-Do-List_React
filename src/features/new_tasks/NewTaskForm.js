@@ -35,6 +35,7 @@ function NewTaskForm() {
         };
 
         console.log(newTask);
+        console.log(taskCounter);
         dispatch(addTask(newTask));
         setTaskCounter(taskCounter + 1);
         resetForm();

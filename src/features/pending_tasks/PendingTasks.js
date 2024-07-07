@@ -12,13 +12,14 @@ function PendingTasks({taskList, setTaskList}) {
                 {tasks.map( task => {
                     if (task.assignment === 'pending') {
                         return (
-                            <div className="pending-tasks-div">
-                                <li key={task.id} className="list-group-item">
+                            <div key={task.id} className="pending-tasks-div">
+                                <li className="list-group-item">
                                     <h4 className="task-name">{task.name}</h4>
                                     <p>{task.frequency}</p>
                                     <p>Due by: {task.dueDate}</p>
-                                    </li>
-                                <AssignTaskBtn className="assign-task-btn" taskList={taskList} setTaskList={setTaskList} task={task}/>
+                                    <AssignTaskBtn className="assign-task-btn" taskList={taskList} setTaskList={setTaskList} task={task}/>
+                                </li>
+                                
                             </div>
                         )
                     } else {
