@@ -1,12 +1,15 @@
+import { useSelector } from "react-redux";
 import AssignTaskBtn from "./AssignTaskBtn";
+import { displayTasks } from "../new_tasks/newTaskSlice";
 
 function PendingTasks({taskList, setTaskList}) {
+    const tasks = useSelector(displayTasks);
     
     return (
         <>
             <h2>Pending Tasks</h2>
             <ul>
-                {taskList.map( task => {
+                {tasks.map( task => {
                     if (task.assignment === 'pending') {
                         return (
                             <div className="pending-tasks-div">

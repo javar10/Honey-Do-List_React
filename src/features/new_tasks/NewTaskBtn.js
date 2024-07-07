@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import NewTaskForm from './NewTaskForm';
 
-function NewTaskBtn({taskList, setTaskList}) {
+function NewTaskBtn() {
     const [displayForm, setDisplayForm] = useState(false);
 
     function displayForm() {
@@ -11,7 +11,7 @@ function NewTaskBtn({taskList, setTaskList}) {
 
     return (
         <div>
-            {displayForm && <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>}
+            {displayForm && <NewTaskForm />}
             <button type="button" id="newTaskBtn" onClick={displayForm}>
                 + Add New Task
             </button>

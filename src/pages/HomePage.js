@@ -17,7 +17,7 @@ const HomePage = () => {
       </div>
       
       <div className="row">
-        <NewTaskForm taskList={taskList} setTaskList={setTaskList}/>
+        <NewTaskForm />
       </div>
 
     </div>

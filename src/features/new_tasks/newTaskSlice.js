@@ -1,15 +1,33 @@
-export class Task {
-    constructor(id, name, frequency, assignment, dateCreated, dueDate ) { // add duration, difficulty, overdue = false
-        this.id = id;
-        this.name = name;
-        this.frequency = frequency;
-        // this.duration = duration;
-        // this.difficulty = difficulty;
-        this.assignment = assignment;
-        this.dateCreated = dateCreated;
-        this.dueDate = dueDate;
-        // this.overdue = overdue;
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+    tasksArray: []
+};
+
+const tasksSlice = createSlice({
+    name: 'tasks',
+    initialState,
+    reducers: {
+        addTask: (state, action) => {
+            console.log('addTask action.payload', action.payload);
+            console.log('addTask state.tasksArray', state.tasksArray);
+            const newTask = {
+                // id: state.tasksArray.length + 1,
+                ...action.payload
+            };
+            return {
+                ...state,
+                tasksArray:[...state.tasksArray, newTask]
+            }
+        }
     }
+})
+
+export const tasksReducer = tasksSlice.reducer;
+export const { addTask } = tasksSlice.actions;
+
+export const displayTasks = (state) => {
+    return state.tasks.tasksArray;
 }
 
 export const calcDueDate = (dateCreated, frequency) => {

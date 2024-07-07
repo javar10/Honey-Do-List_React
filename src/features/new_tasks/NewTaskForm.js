@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, Label, Col, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
-import { Task, calcDueDate } from "./newTaskSlice";
+import { addTask, calcDueDate } from "./newTaskSlice";
 import { validateNewTaskForm } from './validateNewTaskForm';
 
-function NewTaskForm({taskList, setTaskList}) {
+function NewTaskForm() {
     const [displayTaskForm, setDisplayTaskForm] = useState(false);
+
+    const dispatch = useDispatch();
 
     const [selectedFrequency, setSelectedFrequency] = useState('');
     const handleChange = (e, setFieldValue) => {
@@ -16,18 +19,27 @@ function NewTaskForm({taskList, setTaskList}) {
     const [taskCounter, setTaskCounter] = useState(0);
     function handleSubmit(values, {resetForm}) {
         const dateCreated = new Date();
+        const dateCreatedString = dateCreated.toISOString();
+        
         let dueDate = calcDueDate(dateCreated, values.frequency);
         if (!dueDate) {
             dueDate = `${values.oneTimeMonth}/${values.oneTimeDay}/${values.oneTimeYear}`;
         }
-        const newTask = new Task(taskCounter, values.task, values.frequency, 'pending', dateCreated, dueDate);
-        setTaskList([...taskList, newTask]);
+        const newTask = {
+            id: taskCounter,
+            name: values.task,
+            frequency: values.frequency, 
+            assignment: 'pending', 
+            dateCreated: dateCreatedString,
+            dueDate: dueDate
+        };
+
+        console.log(newTask);
+        dispatch(addTask(newTask));
         setTaskCounter(taskCounter + 1);
         resetForm();
         setDisplayTaskForm(false);
     }
-
-    console.log(taskList);
 
     return (
         <>
