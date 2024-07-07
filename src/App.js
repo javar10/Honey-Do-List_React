@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import honeydew from '../src/assets/HoneydewIMG2.png';
-import HomePage from './page/HomePage';
+import HomePage from './pages/HomePage';
 import AssignedTasks from './features/assigned_tasks/AssignedTasks';
 
 function App() {
