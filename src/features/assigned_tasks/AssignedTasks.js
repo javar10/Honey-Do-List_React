@@ -1,7 +1,11 @@
 import AssignedTaskList from "./AssignedTaskList";
 import { USERS } from "../../shared/USERS";
+import { displayTasks } from "../new_tasks/newTaskSlice";
+import { useSelector } from "react-redux";
 
-function AssignedTasks({taskList, setTaskList}) {
+function AssignedTasks() {
+    const taskList = useSelector(displayTasks);
+
     return (
         <div className="row assigned-tasks-div">
             {USERS.map(user => {
@@ -10,7 +14,7 @@ function AssignedTasks({taskList, setTaskList}) {
                 return (
                     <div key={user} className="col users-assigned-tasks-div">
                         <h2>{user}'s Assigned Tasks</h2>
-                        <AssignedTaskList usersTaskList={usersTaskList} taskList={taskList} setTaskList={setTaskList}/>
+                        <AssignedTaskList usersTaskList={usersTaskList}/>
                     </div>
                 )
             })}

@@ -1,9 +1,9 @@
 import AssignedTaskListItem from "./AssignedTaskListItem";
 
-function AssignedTaskList({usersTaskList, taskList, setTaskList}) {
+function AssignedTaskList({ usersTaskList }) {
     return (
         <ul>
-            {usersTaskList.map( task => <AssignedTaskListItem usersTaskList={usersTaskList} taskList={taskList} setTaskList={setTaskList} task={task}/>)} 
+            {usersTaskList.map( task => <AssignedTaskListItem task={task}/>)} 
         </ul>
     );
 }

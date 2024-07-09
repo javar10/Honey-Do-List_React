@@ -10,10 +10,10 @@ const HomePage = () => {
   return (
       
     <div className="container">
-      <AssignedTasks taskList={taskList} setTaskList={setTaskList}/>  
+      <AssignedTasks />  
       
       <div className="row">
-        <PendingTasks className="col" taskList={taskList} setTaskList={setTaskList}/>
+        <PendingTasks className="col" />
       </div>
       
       <div className="row">

@@ -1,11 +1,15 @@
-import { useState } from "react";
-function AssignedTaskListItem({usersTaskList, taskList, setTaskList, task}) {
+import { useSelector, useDispatch } from "react-redux";
+import { updateAssignmentToNull } from "../new_tasks/newTaskSlice";
+import { displayTasks } from "../new_tasks/newTaskSlice";
 
-    const [taskIsComplete, setTaskIsComplete] = useState(false);
+function AssignedTaskListItem({ task }) {
+   
+    const dispatch = useDispatch();
+    const taskList = useSelector(displayTasks);
 
     function handleClick() {
-        task.assignment = null;
-        setTaskList([...taskList]);
+        const updatedTask = taskList[task.id];
+        dispatch(updateAssignmentToNull(updatedTask));
     }
 
     console.log(taskList);
@@ -16,7 +20,7 @@ function AssignedTaskListItem({usersTaskList, taskList, setTaskList, task}) {
                 <input 
                     className="form-check-input me-1"
                     type="checkbox" 
-                    checked={taskIsComplete} 
+                    checked={false} 
                     onChange={handleClick}
                     aria-label="..." 
                     key={task.id}/>
