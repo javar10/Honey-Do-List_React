@@ -1,25 +1,22 @@
-import { USERS } from '../../shared/USERS'; 
 import Dropdown from 'react-bootstrap/Dropdown';
-import { displayTasks, updateAssignmentToMom } from "../new_tasks/newTaskSlice";
+import { displayTasks, updateAssignment } from "../new_tasks/newTaskSlice";
 import { useSelector, useDispatch } from 'react-redux';
+import { selectAllUsers } from '../users/usersSlice';
 
 function UserList({ task }) {
     const dispatch = useDispatch();
     const taskList = useSelector(displayTasks);
-    
+    const usersList = useSelector(selectAllUsers);
+    console.log(taskList)
     function handleClick(e) {
-        // TODO: log user and update user name as the assignment
-        // console.log(e.target);
-        // const userSelected = e.target.textContent;
-        // console.log(userSelected);
-        
-        const updatedTask = taskList[task.id];
-        dispatch(updateAssignmentToMom(updatedTask));
+        const assignment = e.target.textContent;
+        const updatedTask = {...taskList[task.id], assignment};
+        dispatch(updateAssignment(updatedTask));
     }
 
     return (
         <Dropdown.Menu className='userform'>
-            {USERS.map(user => <Dropdown.Item key={task.id} onClick={handleClick}>{user}</Dropdown.Item>)}
+            {usersList.map((user, index) => <Dropdown.Item key={index} onClick={handleClick}>{user}</Dropdown.Item>)}
         </Dropdown.Menu>
     );
 }

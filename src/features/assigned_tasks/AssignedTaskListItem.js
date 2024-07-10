@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateAssignmentToNull } from "../new_tasks/newTaskSlice";
+import { updateAssignment } from "../new_tasks/newTaskSlice";
 import { displayTasks } from "../new_tasks/newTaskSlice";
 
 function AssignedTaskListItem({ task }) {
@@ -8,8 +8,9 @@ function AssignedTaskListItem({ task }) {
     const taskList = useSelector(displayTasks);
 
     function handleClick() {
-        const updatedTask = taskList[task.id];
-        dispatch(updateAssignmentToNull(updatedTask));
+        const assignment = null;
+        const updatedTask = {...taskList[task.id], assignment};
+        dispatch(updateAssignment(updatedTask));
     }
 
     console.log(taskList);

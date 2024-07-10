@@ -7,7 +7,7 @@ function PendingTasks() {
     console.log(JSON.stringify(taskList, null, 2));
     return (
         <>
-            <h2>Pending Tasks</h2>
+            <h2 key='pendingTasks'>Pending Tasks</h2>
             <ul>
                 {taskList.map( task => {
                     if (task.assignment === 'pending') {

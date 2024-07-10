@@ -20,6 +20,17 @@ const tasksSlice = createSlice({
             }
         },
 
+       updateAssignment: (state, action) => {
+            const updatedTask = {...action.payload};
+            const updatedTasksArray = state.tasksArray.map(task =>
+                task.id === action.payload.id ? updatedTask : task
+            )
+            return {
+                ...state,
+                tasksArray: updatedTasksArray
+            }
+        },
+
         updateAssignmentToMom: (state, action) => {
             console.log('updateAssignment action.type', action.type);
             console.log('updateAssignment action.payload', action.payload);
@@ -53,7 +64,7 @@ const tasksSlice = createSlice({
 })
 
 export const tasksReducer = tasksSlice.reducer;
-export const { addTask, updateAssignmentToMom, updateAssignmentToNull } = tasksSlice.actions;
+export const { addTask, updateAssignment, updateAssignmentToMom, updateAssignmentToNull } = tasksSlice.actions;
 
 
 export const displayTasks = (state) => {
