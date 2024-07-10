@@ -81,18 +81,23 @@ form input {
 .row, .users-assigned-tasks-div {
   background-color: var(--alt-background);
   border-radius: 10px;
+  margin-right: 1rem;
   
 }
 .row {
-  margin: 1rem
+  margin: 1rem;
+}
+
+.users-assigned-tasks-div {
+  margin-right: 1rem;
 }
 
 .assigned-tasks-div{
   background-color: var(--main-background);
 }
 
-.users-assigned-tasks-div:first-child {
-  margin-right: 1rem;
+.users-assigned-tasks-div:last-child {
+  margin-right: none;
 }
 
 .pending-tasks-div {
