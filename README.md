@@ -5,4 +5,4 @@ Points are awarded for task completion and are based on difficulty of task and t
 Tasks are automatically assigned if noone accepts them. Points can then be redeemed to decline an auto-assignment. 
 
 ###
-This app is created using React. 
+This app is created using React and Redux. 
