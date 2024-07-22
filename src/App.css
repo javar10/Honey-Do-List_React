@@ -70,12 +70,29 @@ form input {
 .header {
   display: flex;
   align-items: center;
+  height: fit-content;
 }
 
 .header h1, .header img {
   display: inline;
   vertical-align: middle;
   padding-right: 1rem;
+}
+.navDiv {
+  position: relative;
+  right: 10px;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--main-text);
+}
+
+.navItem {
+  text-decoration: none;
+  color: var(--main-text);
 }
 
 .row, .users-assigned-tasks-div {
