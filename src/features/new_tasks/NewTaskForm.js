@@ -16,6 +16,12 @@ function NewTaskForm() {
         setFieldValue("frequency", e.target.value);
     }
 
+    const [selectedAssignment, setSelectedAssignment] = useState('');
+    const handleAssignmentChange = (e, setFieldValue) => {
+        setSelectedAssignment(e.target.value);
+        setFieldValue("assignment", e.target.value);
+    }
+
     const [taskCounter, setTaskCounter] = useState(0);
     function handleSubmit(values, {resetForm}) {
         const dateCreated = new Date();
@@ -29,7 +35,7 @@ function NewTaskForm() {
             id: taskCounter,
             name: values.task,
             frequency: values.frequency, 
-            assignment: 'pending', 
+            assignment: values.assignment, 
             dateCreated: dateCreatedString,
             dueDate: dueDate
         };
@@ -52,7 +58,8 @@ function NewTaskForm() {
                     <Formik 
                         initialValues={{
                             task: "", 
-                            frequency: "--Choose an option--"
+                            frequency: "--Choose an option--",
+                            assignment: 'pending'
                         }}
                         onSubmit={handleSubmit}
                         validate={validateNewTaskForm}
@@ -90,6 +97,27 @@ function NewTaskForm() {
                                         <option>Monthly</option>
                                     </Field>
                                     <ErrorMessage name="frequency">{(msg) => <p className='text-danger'>{msg}</p>}</ErrorMessage>
+                                </FormGroup>
+
+                                <FormGroup>
+                                    <Label htmlFor="newTaskAssignment" className="form-label md-2">Assign To:</Label>
+                                    <Field 
+                                        name="assignment"
+                                        as="select"
+                                        className="form-control"
+                                        // onChange={e => {
+                                        //     handleChange(e);
+                                        //     values.frequency = e.target.value;
+                                        // }}
+                                        onChange={e => handleAssignmentChange(e, setFieldValue)}
+                                    >
+                                        {/* <option disabled>--Choose an option--</option> */}
+                                        <option>pending</option>
+                                        <option>Mom</option>
+                                        <option>Dad</option>
+                                        <option>Lia</option>
+                                    </Field>
+                                    {/* <ErrorMessage name="frequency">{(msg) => <p className='text-danger'>{msg}</p>}</ErrorMessage> */}
                                 </FormGroup>
 
                                 {selectedFrequency === 'One-Time' && 
