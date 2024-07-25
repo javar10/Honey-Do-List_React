@@ -9,14 +9,9 @@ const HomePage = () => {
     <div className="container">
       <AssignedTasks />  
       
-      <div className="row">
-        <PendingTasks className="col" />
-      </div>
+
       
-      <div className="row">
-        <h4>Add a new Task</h4>
-        <NewTaskForm />
-      </div>
+
 
     </div>
   )
