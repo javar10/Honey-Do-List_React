@@ -1,8 +1,9 @@
-import React from 'react'
+import AssignedTasks from '../features/assigned_tasks/AssignedTasks'
 
 const AssignedTasksPage = () => {
   return (
-    <div>AssignedTasksPage</div>
+    <AssignedTasks />  
+    
   )
 }
 
