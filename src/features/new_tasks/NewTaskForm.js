@@ -4,8 +4,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, Label, Col, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { addTask, calcDueDate } from "./newTaskSlice";
 import { validateNewTaskForm } from './validateNewTaskForm';
+import axios from "axios";
 
-function NewTaskForm() {
+const NewTaskForm = () => {
     const [displayTaskForm, setDisplayTaskForm] = useState(false);
 
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function NewTaskForm() {
     }
 
     const [taskCounter, setTaskCounter] = useState(0);
-    function handleSubmit(values, {resetForm}) {
+    const handleSubmit = async (values, {resetForm}) => {
         const dateCreated = new Date();
         const dateCreatedString = dateCreated.toISOString();
         
@@ -40,11 +41,30 @@ function NewTaskForm() {
             dueDate: dueDate
         };
 
+        // const newTaskDB = {
+        //     // id: taskCounter,
+        //     name: values.task,
+        //     frequency: values.frequency, 
+        //     assignedTo: values.assignment, 
+        //     // dateCreated: dateCreatedString,
+        //     // dueDate: dueDate
+        // };
+
         console.log(newTask);
+
         dispatch(addTask(newTask));
         setTaskCounter(taskCounter + 1);
         resetForm();
         setDisplayTaskForm(false);
+
+        //Testing to MongoDB
+        try {
+            const response = await axios.post('http://localhost:3000/tasks', newTask)
+            alert('Data updated successfully!');
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error updating data: ', error);
+        }
     }
 
     return (
@@ -59,7 +79,7 @@ function NewTaskForm() {
                         initialValues={{
                             task: "", 
                             frequency: "--Choose an option--",
-                            assignment: 'pending'
+                            assignment: 'Pending'
                         }}
                         onSubmit={handleSubmit}
                         validate={validateNewTaskForm}
@@ -112,7 +132,7 @@ function NewTaskForm() {
                                         onChange={e => handleAssignmentChange(e, setFieldValue)}
                                     >
                                         {/* <option disabled>--Choose an option--</option> */}
-                                        <option>pending</option>
+                                        <option>Pending</option>
                                         <option>Mom</option>
                                         <option>Dad</option>
                                         <option>Lia</option>
