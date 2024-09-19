@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import PendingTasks from "../features/pending_tasks/PendingTasks";
@@ -6,13 +6,26 @@ import PendingTasks from "../features/pending_tasks/PendingTasks";
 const PendingTasksPage = () => {
   const [data, setData] = useState(null);
 
+  // useEffect(() => {
+  //   axios.get('http://localhost:3000/tasks')
+  //     .then(response => {
+  //       setData(response.data)
+  //       console.log(data)
+  //     })
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
+
   useEffect(() => {
-    axios.get('http://localhost:3000/tasks')
-      .then(response => {
-        setData(response.data)
-        console.log(data)
-      })
-      .catch(error => console.error('Error fetching data:', error));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/tasks');
+        setData(response.data);
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data: ', error)
+      }
+    }
+    fetchData();
   }, []);
 
   return (
